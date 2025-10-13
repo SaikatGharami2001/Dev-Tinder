@@ -2,18 +2,11 @@ const express = require("express");
 
 const app = express();
 
-app.use("/home", (req, res) => {
-  res.send("how many niggas in paris?");
-});
-
-app.use("/a", (req, res) => {
-  res.send("paris?");
-});
-
-app.use("/hello", (req, res) => {
-  res.send("is pari s?");
+app.get("/a/:userName/:Number/:Name", (req, res) => {
+  console.log(req.params);
+  res.send({ firstName: "Saikat", lastName: "Gharami" });
 });
 
 app.listen(333, () => {
-  console.log("Nigga");
+  console.log("Server is running");
 });
